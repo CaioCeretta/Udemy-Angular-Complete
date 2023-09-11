@@ -12,7 +12,8 @@ import { Component } from '@angular/core';
 export class ServersComponent {
   allowNewServer = false;
   serverCreationStatus = 'No server was created'
-  serverName = '';
+  serverName = 'Test';
+  serverCreated = false;
 
 
   constructor() {
@@ -28,7 +29,8 @@ export class ServersComponent {
   }
 
   onCreateServer() {
-    console.log('aaa')
+    this.serverCreated = true;
+    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName
   }
 
   onUpdateServerName(event: InputEvent) {

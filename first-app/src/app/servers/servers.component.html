@@ -1,9 +1,33 @@
-<label >Server Name</label>
-<!-- <input type="text" (input)="onUpdateServerName($event)" class="form-control"> -->
-<input type="text" [(ngModel)]="serverName">
-{{serverName}}
+<label>Server Name</label>
+<input type="text" (input)="onUpdateServerName($event)" class="form-control">
+<!-- <input type="text" [(ngModel)]="serverName" /> -->
+<!-- {{serverName}} -->
 
-<button (click)="onCreateServer()" [disabled]="!allowNewServer" class="btn btn-primary">Add Server</button>
+
+<button
+  (click)="onCreateServer()"
+  [disabled]="!allowNewServer"
+  class="btn btn-primary"
+>
+  Add Server
+</button>
+
+<!-- <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p> -->
+<!-- NgIf is added when we start a * in the start, that's because it is a structural directive, which means it changes
+the structure of our DOM, it either add or doesn't add, the directive is ngIf but the star is required, otherwise it
+would not work correctly
+
+ngIf this must be an expression deciding if it should be added or not
+
+ngIf can also be usded with an else, rendering a new function if ngIf doesn't resolve to true, it would be like:
+with a <ng-template markerName> and then the p element, the markerName must be used on the ngIf else
+ -->
+ <p *ngIf="serverCreated; else nosServer">Server was created, server name is {{ serverName }}</p>
+ <ng-template #nosServer>
+  <p>
+    No server was created
+  </p>N
+
+ </ng-template>
 
 <p>servers works!</p>
-
