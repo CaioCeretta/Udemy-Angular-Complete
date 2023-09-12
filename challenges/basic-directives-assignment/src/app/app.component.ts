@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'basic-directives-assignment';
+  // secretPassword = 'tunaa';
+  toggleDetails = false;
+  log: { timestamp: Date, message: string}[] = []
+
+  constructor() {
+
+  }
+
+  toggleButton() {
+    this.toggleDetails = !this.toggleDetails
+    this.log.push({ timestamp: new Date(), message: 'Button was clicked'})
+
+  }
 }

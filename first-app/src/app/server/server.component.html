@@ -1,2 +1,19 @@
-<p>Server {{serverId}} status is {{ getServerStatus() }}</p>
+<p
+[ngStyle]="{backgroundColor: getColor() }"
+[ngClass]="{online: serverStatus === 'online'}">
+Server {{serverId}} status is {{ getServerStatus() }}</p>
+<!-- the square brackets on the directive name is not part of the directive,the square bracket indicates that we want to
+bind to some property on this directive, and this property name happens to be also ngStyle.
+
+But basically [ngStyle] is a property binding a nd renders the style based on a condition, i could also say
+[ngStyle]="{backgroundColor: serverStatus === 'online' ? 'green' : 'red'}" and ngStyle allows us to dinamically update
+the styles
+
+[ngClass] works similar to ngStyle, it also uses property binding and adds or remove classes conditionally
+
+in this case we use the class name and after the : we set the condition
+
+
+
+-->
 
