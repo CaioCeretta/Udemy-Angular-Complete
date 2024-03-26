@@ -1,1 +1,1 @@
-# Repository of Udemy's Angular Complete Course
+# Repository of Udemy's Complete Angular Course
