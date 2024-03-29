@@ -7,4 +7,25 @@ when i change that input, it will also change the property -->
 
 
 
-<h3>I'm in the app component</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2>I'm in the app component</h2>
+      <hr>
+      <!-- The way of utilizing the component as an attribute, is in cases where
+       the component selector is an array-->
+      <!-- <div app-servers></div> -->
+
+      <!-- If the component selector is a class, this is a good way to add styles to it -->
+      <app-servers></app-servers>
+
+      <hr>
+
+      <!-- <app-servers></app-servers> -->
+
+
+      <app-warning-alert></app-warning-alert>
+      <app-success-alert></app-success-alert>
+    </div>
+  </div>
+</div>

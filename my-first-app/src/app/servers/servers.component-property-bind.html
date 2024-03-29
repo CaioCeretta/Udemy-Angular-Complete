@@ -1,0 +1,41 @@
+Now i'm using property binding, which gets a value from a property in ts and react to it on our html file
+
+<!-- the [disabled] attribute is now dynamic, we need to enclose it into [], square brackets indicate to angular that we
+are using property binding and we want to dinamically bind some property of the ts, so the html attribute disabled, in
+normal HTML, it only sets the specific property in the DOM element, each element that we use is parsed by the browser, and
+translated into the DOM, and therefore we have an element in this DOM and those elements have a couple of properties.
+A lot of these can be set through attributes in the HTML element, and one of those properties is the disabled prop
+
+But here we are not using the disable attribute anymore, with the [] we are directly binding to this native disabled
+property this html element has, so now we can set that equal to the property name, it will resolve to true or false, and
+would disable if it's false and enable if it's true
+
+One important note is to not mix property binding and string interpolation, we might notice that in the example below
+we have the [disabled]="propertyName" there are not curly braces between these quotation marks and there should not be,
+because that would break the app and that would not work, between the quotation marks of property binding, we can and
+must write typescript expressions which will return the value this property expects, so for disabled, some expressions
+would return true or false
+
+
+
+-->
+
+<button
+class="btn btn-primary"
+[disabled]="!allowNewServer">
+Add Server
+</button>
+
+<!-- And if we want to output the value of allowNewServer, we could of course utilize string interpolation in this way
+a boolean can also be cast to a string  -->
+<!-- <p>{{allowNewServer}}</p>
+OR
+This would cause the same behaviour as before
+-->
+
+<p [innerText]="allowNewServer"></p>
+
+
+<app-server></app-server>
+<app-server></app-server>
+<app-server></app-server>
