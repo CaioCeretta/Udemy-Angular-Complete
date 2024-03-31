@@ -76,7 +76,7 @@ and there we might have the logic to turn this green.
 
 . *ngIf
 
-<!-- Example in the servers component -->
+Code example will be on the servers component
 
 
 
