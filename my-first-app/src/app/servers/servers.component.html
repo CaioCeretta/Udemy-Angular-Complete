@@ -1,45 +1,45 @@
-<!-- Here we are binding to the input event, an event that fires whenever the user types something on the input
-and we are binding the function onUpdateServerName
-
-And in this case, we want to output what the user typed on the input, the value of the field, we can get it by passing
-the $event on the argument, the $event is a reserved variable name that we can use in the template when using event
-binding, so for this event, only in this event, $event will simply be the data emmitted with that event,
-
-Every event provided by the DOM, ship some data when they are fired, the click event holds the coordinates of where the
-clicked was, and the input event also gives us some data, and with the $event, we can capture this data and
--->
-
 <label>Server Name</label>
-<input type="text" class="form-control pb-2" (input)="onUpdateServerName($event)">
 
-{{serverName}}
+<!-- Here we are using all forms of databinding
+
+string interpolation to output the ts code properties
+event binding to bind the click of the button to add a server and update the ts property
+property binding to enable the button after the two seconds
+two way binding, to alter the input data both on the ts and on the html -->
 
 
-<!--
-  Like property binding uses square brackets, event binding utilizes parentheses.
+<!-- another form of setting the serverName, the one way databinding
 
-  Between the parentheses, we need to pass the name of the event, for example "click" and we can basically bind to all
-  the events, made avaiable, by the HTML attribute we are placing them on.
-
-  In that case, we binded the click with a method, but it doesn't always have to be a method, between the quotation marks
-  we can put any ts code that we want to execute when that action was made, often times, it is not very good, because we
-  want to execute more code when some event happens.
+  <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
 -->
 
 
 
-<br>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
 
 
-
-<button class="btn btn-primary mb-3" [disabled]="!allowNewServer" (click)="onCreateServer()">
+<button
+class="btn btn-primary"
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">
   Add Server
 </button>
 
+<!-- <p>Name is: {{serverName}}</p> -->
+
 <p>{{serverCreationStatus}}</p>
 
+<!-- The star is required because ngIf is a structural directive, which means that it changes the structure of our DOM
+it either adds the element or it doesn't add it.
 
-<div class="servers mt-5">
-  <app-server></app-server>
-  <app-server></app-server>
-</div>
+Inside of it is just like a conditional if we see everyday, it receives an expression that returns either true or false,
+deciding whether it should be added or not
+
+One thing important to know is that this element is not hidden, it's just not there, the DOM of it hasn't been loaded if
+it didn't resolve to true
+-->
+<p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
+
+
+<!-- <app-server></app-server>
+<app-server></app-server> -->

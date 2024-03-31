@@ -1,0 +1,51 @@
+<!--
+  First we need to add the forms module to the one that is using two data binding
+
+  To use it, we combine property and event binding, we use them by combining the syntaxes, square brackets and within
+  these, parentheses, such as
+
+  [(ngModel)]="propertyName"
+
+  So it will do the following
+
+  it will trigger on the input event, and update the value of serverName in our ts code automatically, and because it
+  is a two way binding, it will also update the value of the html element
+
+
+-->
+
+
+
+<!-- without two way binding-->
+
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+
+
+<!-- with two way binding -->
+
+<input type="text" class="form-control" [(ngModel)]="serverName">
+
+
+
+<!-- Here we can see that the element which is using the two way binding, the value of the ts, replicates on the input
+value, where it doesn't happen the same on the one with just event binding, that one will only change the value of the ts
+variable -->
+
+
+<p class="my-5">{{serverName}}</p>
+<br>
+
+<button
+class="btn btn-primary mb-3"
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">
+  Add Server
+</button>
+
+<p>{{serverCreationStatus}}</p>
+
+
+<div class="servers mt-5">
+  <app-server></app-server>
+  <app-server></app-server>
+</div>

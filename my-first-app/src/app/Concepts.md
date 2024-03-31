@@ -41,3 +41,43 @@ An user clicks a button, we maybe want to trigger something in our ts code. We c
 and we also have an additional form of data-binding which is two-way-binding, [(ngModel)]="data", where combine both
 directions, in this way we are able to react to events and output something at the same time.
 
+## Directives
+
+### What are directives
+
+Directives are instructions in the DOM, we already use them without knowing, components are kinds of instructions in the
+DOM.
+ 
+once we place the selector of our component, somewhere in our templates, at this point of time we are instructing angular
+to add the content of our component template and business logic of our ts code, into the place where we use that selector,
+that was our instruction, we are saying: "Angular, please add our component in this place", and indeed, components are
+directives, but directives with a template, and there are lots of directives without templates.
+
+An example would be an 
+<p appTurnGreen>Receives a green background!</p>
+
+it would be a directive which we could create, we tipically add directives with an attribute selector, but technically,
+the selector of a directive can be configured just like the selector of a component.
+
+On that paragraph, that directive might simply color the text green, angular would find that instruction, like
+
+@Directive({
+  selector: '[appTurnGreen]'
+})
+export class TurnGreenDirective {
+  ...
+}
+
+here we would have defined our directive, with the @Directive decorator, to inform angular that  this class holds a directive
+and there we might have the logic to turn this green.
+
+
+** Example 1 **
+
+. *ngIf
+
+<!-- Example in the servers component -->
+
+
+
+
