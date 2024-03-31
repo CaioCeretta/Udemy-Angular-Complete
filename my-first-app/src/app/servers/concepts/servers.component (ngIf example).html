@@ -1,0 +1,62 @@
+<label>Server Name</label>
+
+
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+
+
+<button
+class="btn btn-primary"
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">
+  Add Server
+</button>
+
+
+<!--
+
+ ** ngIf DIRECTIVE **
+
+The star is required because ngIf is a structural directive, which means that it changes the structure of our DOM
+it either adds the element or it doesn't add it.
+
+Inside of it is just like a conditional if we see everyday, it receives an expression that returns either true or false,
+deciding whether it should be added or not
+
+One thing important to know is that this element is not hidden, it's just not there, the DOM of it hasn't been loaded if
+it didn't resolve to true.
+
+___________________________________________________________ // _________________________________________________________
+
+In the angular 17, an alternative if syntax was added, instead of using *ngIf we can utilize the @if template control
+flow statement
+
+@if(someCondition) {
+  <p>Only visible if 'someCondition' is true</p>
+}
+
+it would replace
+
+<p *ngIf="someCondition">Only visible if 'someCondition' is true</p>
+
+the advantage of the new syntax is that it can be slightly more efficient under the hood and that it does not rely on
+NgIf or the CommonModule being imported
+
+
+-->
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+
+
+<!-- <ng-template> is a directive shipping with angular which we can use to mark places in the DOM, in this case it will
+  act as an else to the ngIf, and with the ng-template, with this marker on it, in this case, it will show conditionally
+  if the nfIf evaluates to false, after the creation, it will change the DOM
+
+  A common alternative to the else to just utilize the ngIf with the reversed check -->
+
+<ng-template #noServer>
+  <p>No server was created</p>
+</ng-template>
+
+
+
+ <app-server></app-server>
+<app-server></app-server>

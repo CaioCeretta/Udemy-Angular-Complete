@@ -19,6 +19,11 @@ export class ServersComponent {
   serverCreationStatus = 'No server was created'
   serverName = ''
   serverCreated = false;
+  servers = [
+    'Tests Server',
+    'Tests Server2'
+
+  ]
 
 
   constructor() {
@@ -27,12 +32,14 @@ export class ServersComponent {
     }, 2000)
   }
 
-  onCreateServer() {
-    this.serverCreated = true
-     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName
-  }
-
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value
   }
+
+  onCreateServer() {
+    this.serverCreated = true
+    this.servers.push(this.serverName)
+    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName
+  }
+
 }

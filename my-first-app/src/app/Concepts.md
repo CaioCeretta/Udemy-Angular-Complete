@@ -72,12 +72,24 @@ here we would have defined our directive, with the @Directive decorator, to info
 and there we might have the logic to turn this green.
 
 
-** Example 1 **
-
 . *ngIf
 
-Code example will be on the servers component
+Code example will be on the servers component concepts folder
 
+.ng-template
 
+Code example will be on the servers component concepts folder
+
+.ngStyle
+
+Code example will be on the server component concepts folder
+
+.ngClass
+
+Code example will be on the server component concepts folder
+
+.ngFor
+
+Code example will be on the servers component concepts folder
 
 

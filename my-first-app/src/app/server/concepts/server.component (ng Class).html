@@ -1,0 +1,15 @@
+<!--
+  ngClassDirective
+
+  ngClass allows us to dinamically add or remove css classes. When we use it, we also need to property bind it, so we
+  need to add the square brackets to it and pass a js object, we also have key value pairs, the keys are the css class
+  names,  and the values are the conditions to whether this class should be applied or not
+
+
+-->
+
+<p
+[ngStyle]="{'background-color': getColor()}"
+[ngClass]="{online: serverStatus === 'online'}"
+>{{'Server'}} with ID {{serverId }} is {{getServerStatus()}}</p>
+

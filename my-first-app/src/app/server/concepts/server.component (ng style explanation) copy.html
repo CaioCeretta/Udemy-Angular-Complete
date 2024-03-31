@@ -1,0 +1,25 @@
+<!--
+  ngStyle directive
+
+The ngStyle directive in Angular allows for dynamic styling of HTML elements. Unlike structural directives, it does not
+require an asterisk prefix as it does not alter the DOM structure. Instead, it utilizes square brackets to indicate
+property binding, enabling dynamic evaluation of styles based on component properties. With ngStyle, styles are bound to
+ an object in the component class, where keys represent style properties and values represent their corresponding values.
+
+ Property binding is completely different, in this case we are binding to a property of the directive
+
+ ngStyle expects to receive a js object and we define key: value pairs of the style name as the key and the value as the
+ value
+
+ [ngStyle]="{'background-color': getColor(), color: 'anycolor'}" or [ngStyle]="{backgroundColor: getColor(), color: 'anycolor'}"
+
+ so this is making clear that within the quotation marks, we are executing ts code, so therefore we can of course call a
+ method
+
+ So for a summary
+
+ ngStyle is an attribute directive, added as an attribute, and in this case, also using property binding to configure it
+-->
+
+<p [ngStyle]="{'background-color': getColor(), color: 'white'}">{{'Server'}} with ID {{serverId }} is {{getServerStatus()}}</p>
+

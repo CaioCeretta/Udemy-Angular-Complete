@@ -5,7 +5,12 @@ import { Component } from "@angular/core";
   selector: 'app-server',
   templateUrl: './server.component.html',
   // template: `<p>Server with ID {{serverId}} is {{serverStatus}} </p>`,
-  styleUrls: ['./server.component.css']
+  // styleUrls: ['./server.component.css']
+  styles: [`
+    .online {
+      color: white
+    }
+  `]
 })
 
 export class ServerComponent {
@@ -15,5 +20,14 @@ export class ServerComponent {
 
   getServerStatus() {
     return this.serverStatus;
+  }
+
+  getColor() {
+    switch(this.serverStatus) {
+      case 'offline':
+        return 'red';
+      case 'online':
+        return 'green'
+    }
   }
 }

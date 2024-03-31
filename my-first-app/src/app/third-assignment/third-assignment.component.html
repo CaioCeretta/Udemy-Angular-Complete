@@ -1,0 +1,40 @@
+<!--
+  <li>Add a button which says 'Display Details'</li>
+  <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
+  <li>Toggle the displaying of the paragraph with the button created in the first step</li>
+  <li>Log all button clicks in an array and output that array below tghe secret paragraph (maybe lof a timestamp or a
+    simple incremententing number)
+  </li>
+  <li>
+    Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (via ngClass)
+  </li>
+
+
+
+-->
+
+<div class="col-6">
+<button class="btn btn-info" (click)="logAndToggle()">Display Details</button>
+
+<p *ngIf="secretPassword === true">Secret Password = Piiiipópópóropó</p>
+
+<!-- <div *ngFor="let log of logs">
+  <p
+  [ngClass]="{'color-white' : log.counter > 5}"
+  [ngStyle]="{'background-color': log.counter > 5 ? 'blue' : ''}"
+  >
+    counter: {{ log.counter }} timestamp: {{log.timestamp }}
+  </p>
+</div>
+
+Now this is another option to the solution, some changes will be made on the ts file, such as modifying the logs.push
+-->
+
+<div *ngFor="let log of logs; let i = index">
+  <p [ngClass]="{'color-white' : i > 5}" [ngStyle]="{'background-color': i > 5 ? 'blue' : ''}">
+    {{log}}
+  </p>
+</div>
+
+
+<!-- There is one option of adding an index to the ngFor -->
