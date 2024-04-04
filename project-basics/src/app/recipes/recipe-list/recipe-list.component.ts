@@ -11,7 +11,12 @@ export class RecipeListComponent {
     new Recipe(
       'pipipoporo',
       'pipipoporo description',
-      'https://www.google.com/url?sa=i&url=https%3A%2F%2Feasy-peasy.ai%2Fai-image-generator%2Fimages%2Fauthentic-south-indian-sambar-recipe-drumsticks-pumpkins-tomatoes-lentils&psig=AOvVaw2fSWnGEv3Zb2w5ASBFAU0p&ust=1712193676864000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLjSqNHwpIUDFQAAAAAdAAAAABAE')
+      'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/31fd5809-0b9c-48fb-bc54-290fc536a502/719c0ca5-ecbe-4d0b-b4b0-f46bc4c1513f.png'),
+    new Recipe(
+      'pipipoporo',
+      'pipipoporo description',
+      'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/31fd5809-0b9c-48fb-bc54-290fc536a502/719c0ca5-ecbe-4d0b-b4b0-f46bc4c1513f.png')
+
   ];
 
 
