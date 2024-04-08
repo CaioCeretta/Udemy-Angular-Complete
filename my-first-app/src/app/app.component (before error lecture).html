@@ -1,0 +1,39 @@
+<!-- ngModel is a directive, that in this case, name is an attribute of the AppComponentClass, and it can be used because
+of the FormsModule imported on the app.module, when i say that the input has the ngModel attribute with the component class
+when i change that input, it will also change the property -->
+
+<!-- <input type="text" [(ngModel)]="name">
+<p>{{name}}</p> -->
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2>I'm in the app component</h2>
+      <hr>
+      <!-- The way of utilizing the component as an attribute, is in cases where
+       the component selector is an array-->
+      <!-- <div app-servers></div> -->
+
+      <!-- If the component selector is a class, this is a good way to add styles to it -->
+      <app-servers></app-servers>
+
+      <hr>
+
+      <!-- <app-servers></app-servers> -->
+
+
+      <!-- first assignment -->
+      <!-- <app-warning-alert></app-warning-alert>
+      <app-success-alert></app-success-alert> -->
+
+
+      <!-- second assignment -->
+
+      <!-- <app-second-assignment></app-second-assignment> -->
+
+      <app-third-assignment></app-third-assignment>
+    </div>
+  </div>
+</div>
