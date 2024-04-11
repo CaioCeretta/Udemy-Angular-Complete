@@ -122,6 +122,3 @@ emit what we just created, then, on to make it available outside, we need to mak
 is @Output(), because we are passing something OUT of the component an not IN
 
 
-
-
-
