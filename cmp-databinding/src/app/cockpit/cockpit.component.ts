@@ -16,6 +16,12 @@ export class CockpitComponent {
 
   @ViewChild('serverContentInput', { static: true }) serverContentInput: ElementRef;
 
+  constructor() {}
+
+  ngOnInit() {
+
+  }
+
 
   onAddServer(nameInput: HTMLInputElement) {
 

@@ -26,9 +26,11 @@ that doesn't change anything, but still is an event, and on events, angular has 
 
 4 - ngAfterContentInit: This is called after content (ng-content) has been projected int oview
 
-5 - ngAfterViewInit: Called after the component's view (and childs views) has been initialized, once after the view has
+5 - ngAfterContentChecked: Called after doCheck and after the content got initialized
+
+6 - ngAfterViewInit: Called after the component's view (and childs views) has been initialized, once after the view has
 been rendered
 
-6 - ngAfterViewChecked: Called every time the view (and child views ) have been checked
+7 - ngAfterViewChecked: Called every time the view (and child views ) have been checked
 
-7 - ngOnDestroy: called once the component is about to be destroyed
+8 - ngOnDestroy: called once the component is about to be destroyed
