@@ -19,23 +19,39 @@
 
 <hr>
 
-<div class="row">
-  <div class="col-12">
-    <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
-  </div>
+<div class="col-xs-12">
+  <!-- Now here we can keep track of the timer count outputted event, to keep track of the current count number
+  then on the timerCount we are going to call the four-assignment method onIntervalFired which will call the component
 
-  <div class="row">
-    <div class="col-12">
-      <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-12">
-      <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+  let's break it down what is happening
 
-    </div>
-  </div>
+  timerCount is the property event being emitted from the game-control, it holds the value of the current interval count
+  and pass it up to other components.
+
+  Here on the parent component, which is calling the game-control, i'm binding this component call to the event being
+  emitted (timerCount), and when that event gets emitted, its value is passed to the onIntervalFired($event), then, on this component
+  method, it is going to have access to the value being emitted
+
+    basically the onIntervalFired is a method in the parent component that handles the event being emitted by timerCount.
+    the $event value, being passed as a parameter, is the timer count value that was fired
+
+
+  -->
+  <app-game-control (timerCount)="onIntervalFired($event)"></app-game-control>
+
 
 
 </div>
+
+<div class="col-xs-12">
+
+<app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"> </app-odd>
+
+<app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+
+</div>
+
+
+
+
+

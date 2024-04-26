@@ -4,21 +4,31 @@ import { last } from 'rxjs-compat/operator/last';
 @Component({
   selector: 'app-game-control',
   templateUrl: './game-control.component.html',
-  styleUrl: './game-control.component.css'
+  styleUrls: ['./game-control.component.css']
 })
 export class GameControlComponent {
-  @Output() intervalFired = new EventEmitter<number>()
-  interval: any;
-  lastNumber = 0;
 
-  onStartGame() {
-    this.interval = setInterval(() => {
-      this.intervalFired.emit(this.lastNumber + 1);
-      this.lastNumber++
+  /* Here we are outputting to the parent the timerCount with the current component count */
+  @Output() timerCount = new EventEmitter<number>()
+  gameTimer: any;
+
+  count: number = 0;
+
+  startGame() {
+    this.gameTimer = setInterval(() => {
+      //With this we should emit incrementing numbers to the parent
+      this.timerCount.emit(this.count)
+      this.count++
     }, 1000)
+
+
+
   }
 
-  onPauseGame() {
-    clearInterval(this.interval)
+  stopGame() {
+    clearInterval(this.gameTimer)
   }
+
+
+
 }

@@ -9,5 +9,4 @@ export class OddComponent {
 
   @Input() number: number;
 
-
 }

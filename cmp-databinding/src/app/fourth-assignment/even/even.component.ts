@@ -9,4 +9,5 @@ export class EvenComponent {
 
   @Input() number: number;
 
+
 }
