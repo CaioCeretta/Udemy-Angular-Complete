@@ -5,27 +5,12 @@
 </div>
 <div class="row">
   <div class="col-xs-12 list-group">
-    <a
-      href="#"
-      class="list-group-item list-group-item-action clearfix"
-      *ngFor="let recipe of recipes">
-      <div class="float-start">
-        <h5>{{recipe.name}}</h5>
-        <p>{{recipe.description}}</p>
-      </div>
-      <span class="float-end">
-        <img
-        src={{recipe.imagePath}}
-        src="{{recipe.imagePath}}"
-        [src]="recipe.imagePath"
-        class="img-fluid" alt={{recipe.name}} style="max-height: 50px;">
-        <!-- On this image i'm just showcasing all the possibles possibilites of defining an attribute, "{{variable}}"
-        or src={{variable}} or [src]="variable"
-        In the last approach we are using property binding, and not string interpolationing, so we are not using string
-        interpolation, we are just binding to the property itself
-        -->
-      </span>
-    </a>
-    <app-recipe-item></app-recipe-item>
+
+    <app-recipe-item
+      *ngFor="let recipeEl of recipes"
+      [recipe]="recipeEl"
+      (recipeSelectedChild)="onRecipeSelected(recipeEl)"
+    >
+    </app-recipe-item>
   </div>
 </div>

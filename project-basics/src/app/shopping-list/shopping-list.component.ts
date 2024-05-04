@@ -7,13 +7,14 @@ import { Ingredient } from '../shared/Ingredient.model';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent {
-  Ingredients: Ingredient[] =
+  ingredients: Ingredient[] =
   [
     new Ingredient('Salada', 2),
     new Ingredient('Tomatoes', 10)
   ];
 
-  constructor() {
-
+  onIngredientAdded(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
   }
+
 }

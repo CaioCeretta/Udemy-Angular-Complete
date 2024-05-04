@@ -1,4 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
+import { Route, Routes } from "@angular/router";
+
+type RouteEmitted = 'shopping-list' | 'recipe';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +9,10 @@ import { Component } from "@angular/core";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+    @Output() featureSelected = new EventEmitter<string>()
 
+    onSelect(route: RouteEmitted) {
+      this.featureSelected.emit(route)
+    }
 
 }

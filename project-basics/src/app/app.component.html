@@ -1,8 +1,23 @@
 <div class="container">
   <div class="row div col-12">
-    <app-header class="mb-5"></app-header>
-    <app-recipes></app-recipes>
-    <app-shopping-list></app-shopping-list>
+    <!-- **Reminder**
+
+      in the app-header we have a featureSelected attribute, which is an attribute with the @Output() directive attribute
+
+      on the app header links we have an event binding, named onSelect, with the value of a string representing each route
+      name. that onSelect method, attributes the value received by the onSelect to that featureSelected attribute, then
+      on the parent component, we are going to be able to know which link is going to be selected, and we can get the value
+      being emitted with the $event when calling that method
+
+      Then, on the app ts we have an onNavigate method which will receive that value emitted and inside of it, it will
+      attribute the value emitted to an attribute named loadedFeature, which now be able to utilize the loadedFeature
+
+
+      *****
+    -->
+    <app-header (featureSelected)="onNavigate($event)" class="mb-5"></app-header>
+    <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+    <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
 
   </div>
 </div>
