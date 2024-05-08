@@ -6,20 +6,46 @@
       </button>
       <br><br>
       <ul class="list-group">
-        <div *ngIf="onlyOdd">
+        <!--
+        the * in front of ngFor is important, because there is no 'star' in the angular syntax when using directives or
+        anything like that, so we could write the same list differently
+
+        -->
+
+        <!-- <ng-template [ngIf]="onlyOdd">
+          <div>
+            <li class="list-group-item" [ngClass]="{odd: oddNumber % 2 != 0}"
+              [ngStyle]="{backgroundColor: oddNumber % 2 !== 0 ? 'yellow' : 'white'}" *ngFor="let oddNumber of oddNumbers">
+              {{oddNumber}}
+            </li>
+          </div>
+        </ng-template> -->
+
+
+        <!-- <div *ngIf="onlyOdd">
+
           <li
             class="list-group-item"
             [ngClass]="{odd: oddNumber % 2 != 0}"
             [ngStyle]="{backgroundColor: oddNumber % 2 !== 0 ? 'yellow' : 'white'}"
 
             *ngFor="let oddNumber of oddNumbers"
+
+
           >
+            {{oddNumber}}
+          </li>
+        </div> -->
+        <div *ngIf="onlyOdd">
+
+          <li class="list-group-item" [ngClass]="{odd: oddNumber % 2 != 0}"
+            [ngStyle]="{backgroundColor: oddNumber % 2 !== 0 ? 'yellow' : 'white'}" *ngFor="let oddNumber of oddNumbers">
             {{oddNumber}}
           </li>
         </div>
       </ul>
       <ul class="list-group">
-        <div *ngIf="!onlyOdd">
+        <div *appUnless="onlyOdd">
           <li
           class="list-group-item"
           [ngClass]="{even: evenNumber % 2 === 0}"
