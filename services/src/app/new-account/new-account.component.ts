@@ -5,19 +5,27 @@ import { LoggingService } from '../login.service';
 @Component({
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
-  styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService, AccountsService]
+  styleUrls: ['./new-account.component.css']
+  // providers: [LoggingService]
 })
 export class NewAccountComponent {
 
   constructor(private loggingService: LoggingService,
-    private accountsService: AccountsService  ) {}
+    private accountsService: AccountsService  ) {
+      /* In the end, the event emitter kinda wraps an observable */
+
+      this.accountsService.statusUpdated.subscribe(
+        (status: string) => {
+          alert('New Status: ' + status)
+        }
+      )
+    }
 
   onCreateAccount(accountName: string, accountStatus: string) {
 
     this.accountsService.addAccount(accountName, accountStatus)
 
-    this.loggingService.logStatusChange(accountStatus)
+    // this.loggingService.logStatusChange(accountStatus)
 
 
   }
