@@ -10,6 +10,7 @@ import { FourthAssignmentComponent } from './fourth-assignment/fourth-assignment
 import { GameControlComponent } from './fourth-assignment/game-control/game-control.component';
 import { OddComponent } from './fourth-assignment/odd/odd.component';
 import { EvenComponent } from './fourth-assignment/even/even.component';
+import { BasicHightlightComponent } from './random-lessons/basic-hightlight/basic-hightlight.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EvenComponent } from './fourth-assignment/even/even.component';
     FourthAssignmentComponent,
     GameControlComponent,
     OddComponent,
-    EvenComponent
+    EvenComponent,
+    BasicHightlightComponent
   ],
   imports: [
     BrowserModule,
